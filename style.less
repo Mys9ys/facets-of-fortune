@@ -1,0 +1,126 @@
+body{
+  background: #474C52;
+  margin: 0;
+}
+.game_container{
+  border-top: 1px solid transparent;
+  width: 1200px;
+  margin: auto;
+}
+
+.equipment_item{
+  display: inline-block;
+  width: 60px;
+
+  background: rgba(33,33,33,0.4);
+  box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
+  border-radius: 3px;
+}
+
+.jewelry_item{
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+
+  background: rgba(33,33,33,0.4);
+  box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
+  border-radius: 3px;
+}
+
+.header{
+  width: 100%;
+  background: rgba(33,33,33,0.4);
+  box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
+  padding: 4px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  color: #A6B2AA;
+
+  .hero_img{
+    width: 60px;
+  }
+  .hero_info_block{
+
+  }
+  .hero_nickname, .hero_lvl{
+    font-weight: 600;
+  }
+
+  .hero_hp{
+    width: 100px;
+    height: 10px;
+    font-size: 10px;
+    background: rosybrown;
+    color: rgb(255,255,255);
+    margin-bottom: 3px;
+  }
+  .hero_xp{
+    width: 100px;
+    height: 10px;
+    font-size: 10px;
+    background: cornflowerblue;
+    color: rgb(255,255,255);
+  }
+}
+
+.equipment_block{
+  margin-top: 5px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  .equipment_main{
+    display: flex;
+    flex-direction: row;
+    .equipment_first{
+      display: flex;
+      flex-direction: column;
+      margin-right: 5px;
+    }
+    .equipment_second{
+      display: flex;
+      flex-direction: column;
+      margin-right: 5px;
+    }
+    .equipment_third{
+      display: flex;
+      flex-direction: column;
+    }
+    .equipment_item5{
+      .equipment_item;
+      height: 100px;
+      margin-bottom: 5px;
+    }
+    .equipment_item4{
+      .equipment_item;
+      height: 80px;
+    }
+    .equipment_item3{
+      .equipment_item;
+      height: 60px;
+      margin-bottom: 5px;
+    }
+    .equipment_item1{
+      .equipment_item;
+      height: 25px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .equipment_jewelry{
+    display: flex;
+    flex-direction: row;
+
+    .jewelry_item1{
+      .jewelry_item;
+      margin-right: 5px;
+    }
+
+    .jewelry_item3{
+      .jewelry_item;
+      width: 52px;
+      margin-right: 5px;
+    }
+  }
+}
