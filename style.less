@@ -84,6 +84,37 @@ body{
     color: rgb(255,255,255);
   }
 }
+
+.money_block{
+  display: flex;
+  flex-direction: column;
+  margin-left: 14px;
+
+  .money_box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid @colorstyle;
+    border-radius: 3px;
+    width: 140px;
+    margin-bottom: 2px;
+
+    .money_img{
+      width: 16px;
+      height: 16px;
+      border-right: 2px solid @colorstyle;
+    }
+    .money_count{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 3px;
+      font-size: 13px;
+    }
+  }
+}
+
+
 .all_information_block{
   display: flex;
   flex-direction: row;
@@ -148,7 +179,10 @@ body{
     }
   }
 }
-
+.all_property_block{
+  display: flex;
+  flex-direction: column;
+}
 .skills_block{
   margin-top: 5px;
   display: flex;
@@ -163,7 +197,8 @@ body{
     background: rgba(33,33,33,0.4);
     box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
     border-radius: 3px;
-    margin: 2px;
+    margin: 0 2px;
+    margin-bottom: 4px;
 
     .skills_name{
       margin-right: 20px;
@@ -194,6 +229,42 @@ body{
       }
       .skills_up_vis{
         visibility: visible;
+      }
+    }
+  }
+}
+
+.attack_defence_desc_block{
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  color: @colorstyle;
+
+  .add_position{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background: rgba(33,33,33,0.4);
+    box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
+    border-radius: 3px;
+    margin: 2px;
+
+    .add_name{
+      margin-right: 20px;
+      padding: 2px 4px;
+    }
+    .add_count_box{
+      display: flex;
+      flex-direction: row;
+
+      .add_count{
+        width: 28px;
+        padding: 2px;
+        box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
   }

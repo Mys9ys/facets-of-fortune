@@ -17,6 +17,15 @@
             <div class="hero_hp"><?=$Hero['hp']?>/<?=$Hero['hp_now']?></div>
             <div class="hero_xp"><?=$Hero['xp']?></div>
         </div>
+        <div class="money_block">
+
+            <?php foreach ($arHero['money'] as $money):?>
+                <div class="money_box">
+                    <img class="money_img" src="/img/money/<?=$money['index']?>.png" alt="" title="<?=$money['name']?>"><div class="money_count"><?=$money['count']?></div>
+                </div>
+            <?php endforeach;?>
+
+        </div>
     </div>
     <div class="all_information_block">
         <div class="equipment_block">
@@ -76,23 +85,39 @@
                 </div>
             </div>
         </div>
-
-        <div class="skills_block">
-            <?php foreach ($arHero['heroSkills'] as $skill):?>
-                <div class="skills_position" data-type="<?=$skill['index']?>">
-                    <div class="skills_name"><?=$skill['name']?></div>
-                    <div class="skills_count_box">
-                        <div class="skills_count"><?=$skill['count']?></div><div class="skills_up <?php if($arHero['skill_up']) echo 'skills_up_vis'?>">+</div>
+        <div class="all_property_block">
+            <div class="skills_block">
+                <?php foreach ($arHero['heroSkills'] as $skill):?>
+                    <div class="skills_position" data-type="<?=$skill['index']?>">
+                        <div class="skills_name"><?=$skill['name']?></div>
+                        <div class="skills_count_box">
+                            <div class="skills_count"><?=$skill['count']?></div><div class="skills_up <?php if($arHero['skill_up']) echo 'skills_up_vis'?>">+</div>
+                        </div>
                     </div>
-                </div>
-            <?php endforeach;?>
+                <?php endforeach;?>
+            </div>
+
+            <div class="attack_defence_desc_block">
+                <?php foreach ($arHero['heroAttackDefence'] as $elem):?>
+                    <div class="add_position" data-type="<?=$elem['index']?>">
+                        <div class="add_name"><?=$elem['name']?></div>
+                        <div class="add_count_box">
+                            <div class="add_count"><?=$elem['count']?>-0</div>
+                        </div>
+                    </div>
+                <?php endforeach;?>
+            </div>
+
+            <div class="rucksack_block">
+                <div class="rucksack_item"></div>
+                <div class="rucksack_item"></div>
+                <div class="rucksack_item"></div>
+            </div>
         </div>
 
 
+
     </div>
-
-
-
 </div>
 </body>
 </html>
