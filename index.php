@@ -85,7 +85,7 @@
                 </div>
             </div>
         </div>
-        <div class="all_property_block">
+        <div class="skills_att_def_block">
             <div class="skills_block">
                 <?php foreach ($arHero['heroSkills'] as $skill):?>
                     <div class="skills_position" data-type="<?=$skill['index']?>">
@@ -107,12 +107,34 @@
                     </div>
                 <?php endforeach;?>
             </div>
+        </div>
+        <div class="property_block">
+            <?php foreach ($arHero['heroProperty'] as $prop):?>
+                <div class="prop_position" data-type="<?=$prop['index']?>">
+                    <div class="prop_name"><?=$prop['name']?></div>
+                    <div class="prop_count_box">
+                        <div class="prop_count"><?=$prop['count']?></div>
+                    </div>
+                </div>
+            <?php endforeach;?>
+        </div>
 
-            <div class="rucksack_block">
-                <div class="rucksack_item"></div>
-                <div class="rucksack_item"></div>
-                <div class="rucksack_item"></div>
-            </div>
+        <div class="craft_block">
+            <?php foreach ($arHero['heroCraft'] as $prop):?>
+                <div class="craft_position" data-type="<?=$prop['index']?>">
+                    <div class="craft_name"><?=$prop['name']?></div>
+                    <div class="craft_count_box">
+                        <div class="craft_lvl"><?=$prop['lvl']?></div>
+                        <div class="craft_count"><?=$prop['count']?></div>
+                    </div>
+                </div>
+            <?php endforeach;?>
+        </div>
+
+        <div class="rucksack_block">
+            <div class="rucksack_item"></div>
+            <div class="rucksack_item"></div>
+            <div class="rucksack_item"></div>
         </div>
 
 

@@ -21,8 +21,27 @@ $arHero = [
     'heroAttackDefence' => [
         ['name'=>'Атака оружием', 'index' => 'attack_weapon', 'count' => 0],
         ['name'=>'Атака магией', 'index' => 'attack_magic', 'count' => 0],
-        ['name'=>'Защита от оружия', 'index' => 'defense_magic', 'count' => 0],
+        ['name'=>'Защита от оружия', 'index' => 'defense_weapon', 'count' => 0],
         ['name'=>'Защита от магии', 'index' => 'defense_magic', 'count' => 0],
+    ],
+    'heroProperty' => [
+        ['name'=>'Скорость', 'index' => 'defense_magic', 'count' => 0],
+        ['name'=>'Уворот', 'index' => 'defense_magic', 'count' => 0],
+        ['name'=>'Критический удар', 'index' => 'defense_magic', 'count' => 0],
+        ['name'=>'Заживление', 'index' => 'defense_magic', 'count' => 0],
+        ['name'=>'Кровотечение', 'index' => 'defense_magic', 'count' => 0],
+        ['name'=>'Пробитие брони', 'index' => 'defense_magic', 'count' => 0],
+        ['name'=>'Скорость', 'index' => 'defense_magic', 'count' => 0],
+        ['name'=>'Скорость', 'index' => 'defense_magic', 'count' => 0],
+        ['name'=>'Скорость', 'index' => 'defense_magic', 'count' => 0],
+    ],
+    'heroCraft' => [
+        ['name'=>'Собиратель', 'index' => 'defense_magic', 'count' => 0, 'lvl'=>0],
+        ['name'=>'Шахтер', 'index' => 'defense_magic', 'count' => 0, 'lvl'=>0],
+        ['name'=>'Лесоруб', 'index' => 'defense_magic', 'count' => 0, 'lvl'=>0],
+        ['name'=>'Изготовитель', 'index' => 'defense_magic', 'count' => 0, 'lvl'=>0],
+        ['name'=>'Алхимик', 'index' => 'defense_magic', 'count' => 0, 'lvl'=>0],
+        ['name'=>'Разборщик', 'index' => 'defense_magic', 'count' => 0, 'lvl'=>0],
     ],
     'heroEquipments' => [
 
