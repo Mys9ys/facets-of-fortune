@@ -132,9 +132,31 @@
         </div>
 
         <div class="rucksack_block">
-            <div class="rucksack_item"></div>
-            <div class="rucksack_item"></div>
-            <div class="rucksack_item"></div>
+            <div class="rucksack_tabs">
+                <div class="rucksack_tab">all</div>
+                <div class="rucksack_tab">weap</div>
+                <div class="rucksack_tab">res</div>
+                <div class="rucksack_tab">quest</div>
+            </div>
+            <div class="rucksack_items">
+                <div class="rucksack_item"></div>
+                <div class="rucksack_item"></div>
+                <div class="rucksack_item"></div>
+                <div class="rucksack_item"></div>
+                <div class="rucksack_item"></div>
+
+                <div class="rucksack_item"></div>
+                <div class="rucksack_item"></div>
+                <div class="rucksack_item"></div>
+                <div class="rucksack_item"></div>
+                <div class="rucksack_item"></div>
+
+                <div class="rucksack_item"></div>
+                <div class="rucksack_item"></div>
+            </div>
+
+
+
         </div>
 
 
