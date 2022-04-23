@@ -139,20 +139,23 @@
                 <div class="rucksack_tab">quest</div>
             </div>
             <div class="rucksack_items">
-                <div class="rucksack_item"></div>
-                <div class="rucksack_item"></div>
-                <div class="rucksack_item"></div>
-                <div class="rucksack_item"></div>
-                <div class="rucksack_item"></div>
+                <?php foreach ($arHero['heroRucksack'] as $item):?>
+                    <div class="rucksack_item">
+                        <img class="rucksack_bag_empty" src="<?=$item['img']?>" alt="">
+                    </div>
+                <?php endforeach;?>
 
-                <div class="rucksack_item"></div>
-                <div class="rucksack_item"></div>
-                <div class="rucksack_item"></div>
-                <div class="rucksack_item"></div>
-                <div class="rucksack_item"></div>
+                <?php for ($i = 0; $i < $arHero['bagEmpty']; $i++):?>
+                <div class="rucksack_item">
+                    <img class="rucksack_bag_empty" src="/img/resources/bag.png" alt="">
+                </div>
+                <?php endfor;?>
+                <?php for ($i = 0; $i < $arHero['bagLock'] ; $i++):?>
+                <div class="rucksack_item">
+                    <img class="rucksack_bag_empty" src="/img/resources/bag_lock.png" alt="">
+                </div>
+                <?php endfor;?>
 
-                <div class="rucksack_item"></div>
-                <div class="rucksack_item"></div>
             </div>
 
 

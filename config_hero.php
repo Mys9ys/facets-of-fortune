@@ -44,9 +44,21 @@ $arHero = [
         ['name'=>'Разборщик', 'index' => 'defense_magic', 'count' => 0, 'lvl'=>0],
     ],
     'heroEquipments' => [
-
+        ['name' => 'Меч', 'type' => 'equip', 'class' =>'swords',  'img'=> 'img/equip/sword/sword_1.png', 'index' => 'sword_1', 'count' => 1]
     ],
     'heroResources' => [
-        ['name' => '', 'img'=> '', 'index' => '', 'count' => '']
+        ['name' => 'Смородина', 'type' => 'resources', 'class' =>'berry', 'img'=> 'img/resources/berry/currant.png', 'index' => 'currant', 'count' => 12]
     ]
 ];
+
+$arHero['bagCount'] = 32;
+$arHero['bagEmpty'] = $arHero['bagCount'] - count($arHero['heroEquipments']) - count($arHero['heroResources']);
+
+if($arHero['bagCount'] % 10 === 0 ){
+    $arHero['bagLock'] = 10;
+} else {
+    $arHero['bagLock'] = 10 + 10 - $arHero['bagCount'] % 10;
+}
+
+$arHero['heroRucksack'] = array_merge($arHero['heroEquipments'], $arHero['heroResources']);
+
