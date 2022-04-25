@@ -141,7 +141,8 @@
             <div class="rucksack_items">
                 <?php foreach ($arHero['heroRucksack'] as $item):?>
                     <div class="rucksack_item">
-                        <img class="rucksack_bag_empty" src="<?=$item['img']?>" alt="">
+                        <img class="rucksack_item_img" src="<?=$item['img']?>" alt="">
+                        <div class="rucksack_item_count"><?=$item['count']?></div>
                     </div>
                 <?php endforeach;?>
 

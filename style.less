@@ -1,8 +1,9 @@
-body{
+body {
   background: #474C52;
   margin: 0;
 }
-.game_container{
+
+.game_container {
   border-top: 1px solid transparent;
   width: 1200px;
   margin: auto;
@@ -10,11 +11,11 @@ body{
 
 @colorstyle: #A6B2AA;
 
-.equipment_item{
+.equipment_item {
   display: flex;
   width: 60px;
 
-  background: rgba(33,33,33,0.4);
+  background: rgba(33, 33, 33, 0.4);
   box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
   border-radius: 3px;
 
@@ -23,19 +24,19 @@ body{
   justify-content: center;
   align-items: center;
 
-  .equipment_item_img{
+  .equipment_item_img {
     width: 80%;
   }
 
 
 }
 
-.jewelry_item{
+.jewelry_item {
   display: flex;
   width: 20px;
   height: 20px;
 
-  background: rgba(33,33,33,0.4);
+  background: rgba(33, 33, 33, 0.4);
   box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
   border-radius: 3px;
 
@@ -43,14 +44,14 @@ body{
   justify-content: center;
   align-items: center;
 
-  .jewelry_item_img{
+  .jewelry_item_img {
     width: 80%;
   }
 }
 
-.header{
+.header {
   width: 100%;
-  background: rgba(33,33,33,0.4);
+  background: rgba(33, 33, 33, 0.4);
   box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
   padding: 4px;
   border-radius: 3px;
@@ -59,39 +60,42 @@ body{
   color: @colorstyle;
   box-sizing: border-box;
 
-  .hero_img{
+  .hero_img {
     width: 60px;
   }
-  .hero_info_block{
+
+  .hero_info_block {
 
   }
-  .hero_nickname, .hero_lvl{
+
+  .hero_nickname, .hero_lvl {
     font-weight: 600;
   }
 
-  .hero_hp{
+  .hero_hp {
     width: 100px;
     height: 10px;
     font-size: 10px;
     background: rosybrown;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     margin-bottom: 3px;
   }
-  .hero_xp{
+
+  .hero_xp {
     width: 100px;
     height: 10px;
     font-size: 10px;
     background: cornflowerblue;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
   }
 }
 
-.money_block{
+.money_block {
   display: flex;
   flex-direction: column;
   margin-left: 14px;
 
-  .money_box{
+  .money_box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -100,12 +104,13 @@ body{
     width: 140px;
     margin-bottom: 2px;
 
-    .money_img{
+    .money_img {
       width: 16px;
       height: 16px;
       border-right: 2px solid @colorstyle;
     }
-    .money_count{
+
+    .money_count {
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -116,66 +121,74 @@ body{
 }
 
 
-.all_information_block{
+.all_information_block {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
 }
-.equipment_block{
+
+.equipment_block {
   margin-top: 5px;
 
   display: flex;
   flex-direction: column;
 
-  .equipment_main{
+  .equipment_main {
     display: flex;
     flex-direction: row;
-    .equipment_first{
+
+    .equipment_first {
       display: flex;
       flex-direction: column;
       margin-right: 5px;
     }
-    .equipment_second{
+
+    .equipment_second {
       display: flex;
       flex-direction: column;
       margin-right: 5px;
     }
-    .equipment_third{
+
+    .equipment_third {
       display: flex;
       flex-direction: column;
     }
-    .equipment_item5{
+
+    .equipment_item5 {
       .equipment_item;
       height: 100px;
       margin-bottom: 5px;
     }
-    .equipment_item4{
+
+    .equipment_item4 {
       .equipment_item;
       height: 80px;
     }
-    .equipment_item3{
+
+    .equipment_item3 {
       .equipment_item;
       height: 60px;
       margin-bottom: 5px;
     }
-    .equipment_item1{
+
+    .equipment_item1 {
       .equipment_item;
       height: 25px;
       margin-bottom: 5px;
     }
   }
 
-  .equipment_jewelry{
+  .equipment_jewelry {
     display: flex;
     flex-direction: row;
 
-    .jewelry_item1{
+    .jewelry_item1 {
       .jewelry_item;
       margin-right: 4px;
     }
 
-    .jewelry_item3{
+    .jewelry_item3 {
       .jewelry_item;
       width: 46px;
       margin-right: 4px;
@@ -183,37 +196,38 @@ body{
   }
 }
 
-.skills_att_def_block{
+.skills_att_def_block {
   display: flex;
   flex-direction: column;
 }
 
-.skills_block{
+.skills_block {
   margin-top: 5px;
   display: flex;
   flex-direction: column;
   color: @colorstyle;
 
-  .skills_position{
+  .skills_position {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
-    background: rgba(33,33,33,0.4);
+    background: rgba(33, 33, 33, 0.4);
     box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
     border-radius: 3px;
     margin: 0 2px;
     margin-bottom: 4px;
 
-    .skills_name{
+    .skills_name {
       margin-right: 20px;
       padding: 2px 4px;
     }
-    .skills_count_box{
+
+    .skills_count_box {
       display: flex;
       flex-direction: row;
 
-      .skills_count{
+      .skills_count {
         width: 28px;
         padding: 2px;
         box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
@@ -221,7 +235,8 @@ body{
         justify-content: center;
         align-items: center;
       }
-      .skills_up{
+
+      .skills_up {
         visibility: hidden;
         width: 18px;
         display: flex;
@@ -232,38 +247,40 @@ body{
         border: 2px solid @colorstyle;
         cursor: pointer;
       }
-      .skills_up_vis{
+
+      .skills_up_vis {
         visibility: visible;
       }
     }
   }
 }
 
-.attack_defence_desc_block{
+.attack_defence_desc_block {
   margin-top: 5px;
   display: flex;
   flex-direction: column;
   color: @colorstyle;
 
-  .add_position{
+  .add_position {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
-    background: rgba(33,33,33,0.4);
+    background: rgba(33, 33, 33, 0.4);
     box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
     border-radius: 3px;
     margin: 2px;
 
-    .add_name{
+    .add_name {
       margin-right: 20px;
       padding: 2px 4px;
     }
-    .add_count_box{
+
+    .add_count_box {
       display: flex;
       flex-direction: row;
 
-      .add_count{
+      .add_count {
         width: 28px;
         padding: 2px;
         box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
@@ -275,33 +292,34 @@ body{
   }
 }
 
-.property_block{
+.property_block {
   margin-top: 5px;
   display: flex;
   flex-direction: column;
   color: @colorstyle;
 
-  .prop_position{
+  .prop_position {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
-    background: rgba(33,33,33,0.4);
+    background: rgba(33, 33, 33, 0.4);
     box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
     border-radius: 3px;
     margin: 0 3px;
     margin-bottom: 3px;
 
-    .prop_name{
+    .prop_name {
       font-size: 13px;
       margin-right: 20px;
       padding: 1px 2px;
     }
-    .prop_count_box{
+
+    .prop_count_box {
       display: flex;
       flex-direction: row;
 
-      .prop_count{
+      .prop_count {
         width: 20px;
         padding: 1px;
         font-size: 14px;
@@ -314,35 +332,36 @@ body{
   }
 }
 
-.craft_block{
+.craft_block {
   margin-top: 5px;
   display: flex;
   flex-direction: column;
   color: @colorstyle;
 
-  .craft_position{
+  .craft_position {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
-    background: rgba(33,33,33,0.4);
+    background: rgba(33, 33, 33, 0.4);
     box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
     border-radius: 3px;
     margin: 0 3px;
     margin-bottom: 3px;
 
-    .craft_name{
+    .craft_name {
       font-size: 13px;
       margin-right: 7px;
       padding: 1px 2px;
       display: flex;
       align-items: center;
     }
-    .craft_count_box{
+
+    .craft_count_box {
       display: flex;
       flex-direction: row;
 
-      .craft_lvl{
+      .craft_lvl {
         width: 16px;
         padding: 1px;
         border-radius: 3px;
@@ -353,7 +372,8 @@ body{
         font-size: 13px;
         border: 2px solid @colorstyle;
       }
-      .craft_count{
+
+      .craft_count {
         width: 40px;
         font-size: 14px;
         box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
@@ -366,25 +386,25 @@ body{
   }
 }
 
-.rucksack_block{
+.rucksack_block {
   width: 500px;
   display: flex;
   flex-direction: column;
   margin-top: 5px;
   margin-left: 3px;
-  background: rgba(33,33,33,0.4);
+  background: rgba(33, 33, 33, 0.4);
   box-shadow: -4px 4px 2px -5px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 20%);
   border-radius: 3px;
   box-sizing: border-box;
 
-  .rucksack_tabs{
+  .rucksack_tabs {
     display: flex;
     flex-direction: row;
     border-bottom: 2px solid @colorstyle;
     padding-top: 8px;
     padding-left: 8px;
 
-    .rucksack_tab{
+    .rucksack_tab {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -404,13 +424,14 @@ body{
   }
 
 
-  .rucksack_items{
+  .rucksack_items {
     padding: 4px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     //justify-content: space-between;
-    .rucksack_item{
+    .rucksack_item {
+      position: relative;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -422,8 +443,24 @@ body{
       margin: 2px;
       box-sizing: border-box;
 
-      .rucksack_bag_empty{
+      .rucksack_item_img {
+        width: 100%;
+      }
+
+      .rucksack_bag_empty {
         width: 80%;
+      }
+
+      .rucksack_item_count {
+        position: absolute;
+        color: @colorstyle;
+        background: rgba(33, 33, 33, 0.7);
+        right: 1px;
+        bottom: 1px;
+        font-size: 12px;
+        border-radius: 3px;
+        padding: 0 2px;
+        border: 1px solid @colorstyle;
       }
     }
   }

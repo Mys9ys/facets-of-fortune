@@ -47,7 +47,8 @@ $arHero = [
         ['name' => 'Меч', 'type' => 'equip', 'class' =>'swords',  'img'=> 'img/equip/sword/sword_1.png', 'index' => 'sword_1', 'count' => 1]
     ],
     'heroResources' => [
-        ['name' => 'Смородина', 'type' => 'resources', 'class' =>'berry', 'img'=> 'img/resources/berry/currant.png', 'index' => 'currant', 'count' => 12]
+        ['name' => 'Смородина', 'type' => 'resources', 'class' =>'berry', 'img'=> 'img/resources/berry/currant.png', 'index' => 'currant', 'count' => 12],
+        ['name' => 'Уголь', 'type' => 'resources', 'class' =>'extraction', 'img'=> 'img/resources/extraction/coal.png', 'index' => 'coal', 'count' => 1222]
     ]
 ];
 
