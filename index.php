@@ -4,29 +4,13 @@
     <meta charset="UTF-8">
     <title>Facets of Fortune</title>
     <link rel="stylesheet" href="/style.min.css">
+
 </head>
 <body>
 <?require_once 'config_hero.php'?>
+<?require_once 'template/header.php'?>
 <div class="game_container">
-    <div class="header">
-        <?php $Hero = $arHero['heroInfo']?>
-        <img class="hero_img" src="/img/hero.png" alt="">
-        <div class="hero_info_block">
-            <div class="hero_nickname"><?=$Hero['nickname']?></div>
-            <div class="hero_lvl">lvl: <?=$Hero['lvl']?></div>
-            <div class="hero_hp"><?=$Hero['hp']?>/<?=$Hero['hp_now']?></div>
-            <div class="hero_xp"><?=$Hero['xp']?></div>
-        </div>
-        <div class="money_block">
 
-            <?php foreach ($arHero['money'] as $money):?>
-                <div class="money_box">
-                    <img class="money_img" src="/img/money/<?=$money['index']?>.png" alt="" title="<?=$money['name']?>"><div class="money_count"><?=$money['count']?></div>
-                </div>
-            <?php endforeach;?>
-
-        </div>
-    </div>
     <div class="all_information_block">
         <div class="equipment_block">
             <div class="equipment_main">
@@ -167,5 +151,6 @@
 
     </div>
 </div>
+
 </body>
 </html>
