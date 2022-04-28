@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="<?$_SERVER['DOCUMENT_ROOT']?>/template/style.min.css">
 <?require_once 'config_header.php'?>
+<script src="/vendor/jquery-1.8.2.min.js"></script>
 
 <div class="header_container">
     <div class="header">

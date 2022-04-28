@@ -1,6 +1,6 @@
 <?php
 $arLab = [
-    [['wall' => ['bottom']],['wall' => ['bottom']],[]],
+    [['wall' => ['bottom'], 'obj' => ['exit' => 'y']],['wall' => ['bottom']],[]],
     [['wall' => ['top']],['wall' => ['top', 'right', 'bottom']],[]],
     [[],[],[]],
 ];
