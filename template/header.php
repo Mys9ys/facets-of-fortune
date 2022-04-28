@@ -20,8 +20,14 @@
         </div>
 
         <div class="btn_block">
+            <a class="header_btn" href="/">
+                <img class="header_btn_img" src="/img/header/rucksack.png" alt="" title="Инвентарь">
+            </a>
             <a class="header_btn" href="/battle">
                 <img class="header_btn_img" src="/img/header/btn_battle.png" alt="" title="Битва">
+            </a>
+            <a class="header_btn" href="/labyrinth">
+                <img class="header_btn_img" src="/img/header/labyrinth.png" alt="" title="Лабиринт">
             </a>
         </div>
     </div>

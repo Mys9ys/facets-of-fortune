@@ -1,0 +1,40 @@
+.labyrinth_container{
+  width: 1200px;
+  margin: auto;
+}
+
+.wall{
+  border-color: #474C52;
+  border-width: 2px;
+  border-style: solid;
+}
+
+
+
+.lab_container{
+  display: inline-block;
+  border: 2px solid black;
+  background: darkslategrey;
+  .lab_row{
+    display: flex;
+    flex-direction: row;
+  }
+  .lab_cell{
+    width: 25px;
+    height: 25px;
+
+    border: 1px solid rgba(33,33,33,0.05);
+    //margin: 0.5px;
+    //box-sizing: border-box;
+
+    &.top{
+      border-top: 1px solid black;
+    }
+    &.bottom{
+      border-bottom: 1px solid black;
+    }
+    &.bottom{
+      border-bottom: 1px solid black;
+    }
+  }
+}
