@@ -11,6 +11,7 @@
                     <div id="<?= $keyR ?>_<?= $keyC ?>"
                          class="lab_cell <? if ($col['wall']) echo implode(' ', $col['wall']) ?>">
                         <? if ($col['obj']['exit'] == 'y') echo '<span class="player_place">u</span>' ?>
+                        <? if ($col['loot']) echo '<span class="cell_loot">' . $col['loot'] . '</span>' ?>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -20,11 +21,10 @@
 
 <script>
     $(document).ready(function () {
-        console.log('tyt')
 
         document.body.onkeydown = function (e) {
+            console.log(e.key)
             PlayerStep(e.key)
-            console.log('e', e.key)
         }
     })
 
@@ -33,16 +33,16 @@
         coord = selector.parent().attr('id').split('_')
 
         switch (key) {
-            case 'ArrowUp':
+            case 'ArrowUp', 'w':
                 PlayerGoUp(selector, coord)
                 break;
-            case 'ArrowRight':
+            case 'ArrowRight', 'd':
                 PlayerGoRight(selector, coord)
                 break;
-            case 'ArrowLeft':
+            case 'ArrowLeft', 'a':
                 PlayerGoLeft(selector, coord)
                 break;
-            case 'ArrowDown':
+            case 'ArrowDown', 's':
                 PlayerGoDown(selector, coord)
                 break;
         }
@@ -51,32 +51,32 @@
     function PlayerGoUp(selector, coord) {
         if (coord[0] > 0) {
             coord[0] -= 1
-            PlayerMoving(selector,coord)
+            PlayerMoving(selector, coord)
         }
     }
 
     function PlayerGoRight(selector, coord) {
         if (coord[1] < coord.length) {
             coord[1] = Number(coord[1]) + 1
-            PlayerMoving(selector,coord)
+            PlayerMoving(selector, coord)
         }
     }
 
     function PlayerGoDown(selector, coord) {
         if (coord[0] < coord.length) {
             coord[0] = Number(coord[0]) + 1
-            PlayerMoving(selector,coord)
+            PlayerMoving(selector, coord)
         }
     }
 
     function PlayerGoLeft(selector, coord) {
         if (coord[1] > 0) {
             coord[1] -= 1
-            PlayerMoving(selector,coord)
+            PlayerMoving(selector, coord)
         }
     }
 
-    function PlayerMoving(selector,coord) {
+    function PlayerMoving(selector, coord) {
         Player = selector.remove()
         $('#' + coord.join('_')).append(Player)
     }
