@@ -7,11 +7,13 @@
     <div class="lab_container">
         <?php foreach ($arLab as $keyR => $row): ?>
             <div class="lab_row">
-                <?php foreach ($row as $keyC => $col): ?>
-                    <div id="<?= $keyR ?>_<?= $keyC ?>"
-                         class="lab_cell <? if ($col['wall']) echo implode(' ', $col['wall']) ?>">
-                        <? if ($col['obj']['exit'] == 'y') echo '<span class="player_place">u</span>' ?>
-                        <? if ($col['loot']) echo '<span class="cell_loot">' . $col['loot'] . '</span>' ?>
+                <?php foreach ($row as $keyC => $col):
+                    $id = $keyR .'_' . $keyC?>
+                    <div id="<?= $id ?>"
+                         class="lab_cell <? if ($arWalls[$id]) echo implode(' ', $arWalls[$id]) ?>">
+                        <? if ($arObjects[$id] == 'exit') echo '<span class="player_place">u</span>' ?>
+                        <? if ($arLoots[$id]) foreach ($arLoots[$id] as $loot) {
+                            echo '<span class="cell_loot">' . $loot . '</span>'; }?>
                     </div>
                 <?php endforeach; ?>
             </div>
