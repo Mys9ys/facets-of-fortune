@@ -30,47 +30,49 @@
 
     function PlayerStep(key) {
         selector = $('.lab_container').find('.player_place')
-        coord = selector.parent().attr('id').split('_')
+        cell = selector.parent().attr('id')
+        coord = cell.split('_')
 
         switch (key) {
-            case 'ArrowUp', 'w':
-                PlayerGoUp(selector, coord)
+            case 'ArrowUp':
+                PlayerGoUp(selector, cell, coord)
                 break;
-            case 'ArrowRight', 'd':
-                PlayerGoRight(selector, coord)
+            case 'ArrowRight':
+                PlayerGoRight(selector, cell, coord)
                 break;
-            case 'ArrowLeft', 'a':
-                PlayerGoLeft(selector, coord)
+            case 'ArrowLeft':
+                PlayerGoLeft(selector, cell, coord)
                 break;
-            case 'ArrowDown', 's':
-                PlayerGoDown(selector, coord)
+            case 'ArrowDown':
+                PlayerGoDown(selector, cell, coord)
                 break;
         }
     }
 
-    function PlayerGoUp(selector, coord) {
-        if (coord[0] > 0) {
+    function PlayerGoUp(selector, cell, coord) {
+        if (coord[0] > 0 && !$('#'+cell).is('.top')) {
             coord[0] -= 1
             PlayerMoving(selector, coord)
         }
     }
 
-    function PlayerGoRight(selector, coord) {
-        if (coord[1] < coord.length) {
+    function PlayerGoRight(selector, cell, coord) {
+        if (coord[1] < coord.length && !$('#'+cell).is('.right')) {
             coord[1] = Number(coord[1]) + 1
             PlayerMoving(selector, coord)
         }
     }
 
-    function PlayerGoDown(selector, coord) {
-        if (coord[0] < coord.length) {
+    function PlayerGoDown(selector, cell, coord) {
+        console.log($('#'+cell).is('.bottom'))
+        if (coord[0] < coord.length && !$('#'+cell).is('.bottom')) {
             coord[0] = Number(coord[0]) + 1
             PlayerMoving(selector, coord)
         }
     }
 
-    function PlayerGoLeft(selector, coord) {
-        if (coord[1] > 0) {
+    function PlayerGoLeft(selector, cell, coord) {
+        if (coord[1] > 0 && !$('#'+cell).is('.left')) {
             coord[1] -= 1
             PlayerMoving(selector, coord)
         }
