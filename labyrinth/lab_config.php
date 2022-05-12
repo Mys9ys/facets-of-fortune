@@ -1,4 +1,5 @@
 <?php
+require_once($_SERVER['DOCUMENT_ROOT'] . "/labyrinth/CreateLabyrinth.php");
 $arLab = [
     range(0, 2),
     range(0, 2),
@@ -17,3 +18,6 @@ $arLoots = [
 $arObjects = [
   '0_0' => 'exit'
 ];
+
+$lab = new CreateLabyrinth();
+$arWallsNew = $lab->createLabyrinth();

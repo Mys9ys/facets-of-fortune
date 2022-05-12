@@ -19,6 +19,22 @@
             </div>
         <?php endforeach; ?>
     </div>
+
+    <div class="lab_container">
+        <?php for ($i=0;$i<10;$i++): ?>
+            <div class="lab_row">
+                <?php for ($j=0;$j<10;$j++):
+                    $id = $i .'_' . $j?>
+                    <div id="<?= $id ?>"
+                         class="lab_cell <? if ($arWallsNew[$i][$j]) echo implode(' ', $arWallsNew[$i][$j]) ?>">
+                        <? if ($arObjects[$id] == 'exit') echo '<span class="player_place">u</span>' ?>
+                        <? if ($arLoots[$id]) foreach ($arLoots[$id] as $loot) {
+                            echo '<span class="cell_loot">' . $loot . '</span>'; }?>
+                    </div>
+                <?php endfor; ?>
+            </div>
+        <?php endfor; ?>
+    </div>
 </div>
 
 <script>
