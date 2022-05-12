@@ -12,9 +12,12 @@
 
 
 .lab_container{
+  max-width: 100%;
+  max-height: 100vh;
   display: inline-block;
   border: 2px solid black;
   background: darkslategrey;
+  //overflow: scroll;
   .lab_row{
     display: flex;
     flex-direction: row;
@@ -27,7 +30,7 @@
     //margin: 0.5px;
     //box-sizing: border-box;
 
-    &.top{
+    &.up{
       border-top: 1px solid black;
     }
     &.bottom{
