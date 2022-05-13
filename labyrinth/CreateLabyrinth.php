@@ -20,12 +20,13 @@ class CreateLabyrinth
     {
         for ($i = 1; $i < $this->row - 1; $i++) {
             for ($j = 1; $j < $this->col - 1; $j++) {
+
                 $countWall = $this->randCountWall();
-                if($this->arWall[$i][$j]) {
+                if ($this->arWall[$i][$j]) {
                     $countWall -= count($this->arWall[$i][$j]);
-//                    var_dump($countWall);
                 }
-                if ($countWall>0) {
+                if ($countWall > 0) {
+//                    var_dump($countWall);
                     $this->selectWallSide($i, $j, $countWall);
                     $this->sumWall += $countWall;
                 }
@@ -40,15 +41,15 @@ class CreateLabyrinth
     {
         $rand = rand(0, 99);
 
-        if (in_array($rand, range(0, $this->zeroWall-1))) {
+        if (in_array($rand, range(0, $this->zeroWall - 1))) {
             return 0;
         }
 
-        if (in_array($rand, range($this->zeroWall, $this->oneWall-1))) {
+        if (in_array($rand, range($this->zeroWall, $this->oneWall - 1))) {
             return 1;
         }
 
-        if (in_array($rand, range($this->oneWall, $this->twoWall-1))) {
+        if (in_array($rand, range($this->oneWall, $this->twoWall - 1))) {
             return 2;
         }
 
@@ -67,6 +68,10 @@ class CreateLabyrinth
             $this->doubleWallSet($row, $col, $arWall[$i]);
         }
         $this->arWall[$row][$col] = $this->arWall[$row][$col] ? array_merge($this->arWall[$row][$col], $arResult) : $arResult;
+//        if (count($this->arWall[$row][$col]) === 3) {
+//            var_dump($row . '- ' . $col);
+//        }
+//         var_dump($arResult);
     }
 
     private function doubleWallSet($row, $col, $side)
@@ -92,13 +97,17 @@ class CreateLabyrinth
 
         }
 
-        $this->arWall[$row][$col][] = $this->arWall[$row][$col] ? array_push($this->arWall[$row][$col], $addSide) : $addSide;
+        $this->arWall[$row][$col][] = $addSide;
+        $this->arWall[$row][$col] = array_unique($this->arWall[$row][$col], SORT_REGULAR);
 
-//        $this->arWall[$row][$col][] = $addSide;
+        if (count($this->arWall[$row][$col]) === 3) {
+            var_dump($row . '- ' . $col);
+        }
     }
 
-    public function getSize(){
-        return ['row'=>$this->row, 'col'=>$this->col];
+    public function getSize()
+    {
+        return ['row' => $this->row, 'col' => $this->col];
     }
 
 }
