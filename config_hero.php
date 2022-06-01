@@ -43,35 +43,15 @@ $arHero = [
         ['name'=>'Алхимик', 'index' => 'defense_magic', 'count' => 0, 'lvl'=>0],
         ['name'=>'Разборщик', 'index' => 'defense_magic', 'count' => 0, 'lvl'=>0],
     ],
-    'heroEquipments' => [
-        ['name' => 'Меч', 'type' => 'equip', 'class' =>'swords',  'img'=> 'img/equip/sword/sword_1.png', 'index' => 'sword_1', 'count' => 1]
-    ],
-    'heroResources' => [
-        ['name' => 'Смородина', 'type' => 'resources', 'class' =>'berry', 'img'=> 'img/resources/berry/currant.png', 'index' => 'currant', 'count' => 12],
-        ['name' => 'Уголь', 'type' => 'resources', 'class' =>'extraction', 'img'=> 'img/resources/extraction/coal.png', 'index' => 'coal', 'count' => 1222]
-    ]
 ];
 
-$arHero['bagCount'] = 32;
-$arHero['bagEmpty'] = $arHero['bagCount'] - count($arHero['heroEquipments']) - count($arHero['heroResources']);
+//$arHero['bagCount'] = 32;
+//$arHero['bagEmpty'] = $arHero['bagCount'] - count($arHero['heroEquipments']) - count($arHero['heroResources']);
+//
+//if($arHero['bagCount'] % 10 === 0 ){
+//    $arHero['bagLock'] = 10;
+//} else {
+//    $arHero['bagLock'] = 10 + 10 - $arHero['bagCount'] % 10;
+//}
 
-if($arHero['bagCount'] % 10 === 0 ){
-    $arHero['bagLock'] = 10;
-} else {
-    $arHero['bagLock'] = 10 + 10 - $arHero['bagCount'] % 10;
-}
-
-$arHero['heroRucksack'] = array_merge($arHero['heroEquipments'], $arHero['heroResources']);
-
-$arSwords['sword_1'] = [
-    'faces' => [
-        ['attack' => 1],
-        ['attack' => 1],
-        ['attack' => 2],
-        ['attack' => 3],
-    ],
-    'min' => 1,
-    'max' => 3
-];
-
-
+//$arHero['heroRucksack'] = array_merge($arHero['heroEquipments'], $arHero['heroResources']);

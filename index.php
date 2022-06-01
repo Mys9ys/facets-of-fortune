@@ -7,7 +7,9 @@
 
 </head>
 <body>
-<? require_once 'config_hero.php' ?>
+<? use classes\Rucksack;
+
+require_once 'config_hero.php' ?>
 <? require_once 'template/header.php' ?>
 <div class="game_container">
 
@@ -124,19 +126,23 @@
                 <div class="rucksack_tab">quest</div>
             </div>
             <div class="rucksack_items">
-                <?php foreach ($arHero['heroRucksack'] as $item): ?>
+
+                <?$rucksack = new Rucksack();
+                $arRucksack = $rucksack->getItems();
+                ?>
+                <?php foreach ($arRucksack as $item): ?>
                     <div class="rucksack_item">
                         <img class="rucksack_item_img" src="<?= $item['img'] ?>" alt="" title="<?= $item['name'] ?>">
                         <div class="rucksack_item_count"><?= $item['count'] ?></div>
                     </div>
                 <?php endforeach; ?>
 
-                <?php for ($i = 0; $i < $arHero['bagEmpty']; $i++): ?>
+                <?php for ($i = 0; $i < $rucksack->bagEmpty; $i++): ?>
                     <div class="rucksack_item">
                         <img class="rucksack_bag_empty" src="/img/resources/bag.png" alt="">
                     </div>
                 <?php endfor; ?>
-                <?php for ($i = 0; $i < $arHero['bagLock']; $i++): ?>
+                <?php for ($i = 0; $i < $rucksack->bagLock; $i++): ?>
                     <div class="rucksack_item">
                         <img class="rucksack_bag_empty" src="/img/resources/bag_lock.png" alt="">
                     </div>
