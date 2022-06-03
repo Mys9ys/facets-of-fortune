@@ -1,7 +1,8 @@
 <?php
 $arr = [
     'Equipments' => [
-        ['index' => 'sword_1', 'count' => 1]
+        ['index' => 'sword_1', 'count' => 1],
+        ['index' => 'shield_1', 'count' => 1]
     ],
     'Resources' => [
         ['index' => 'currant', 'count' => 12],

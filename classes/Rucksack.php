@@ -14,30 +14,38 @@ class Rucksack
     public $countEquipments;
     public $countResources;
 
-    public function getItems()
-    {
+    protected $equipments = [];
+    protected $resources = [];
+    protected $items = [];
 
+
+    public function __construct()
+    {
         $info = file_get_contents($this->heroConfigUrl);
 
         $arr = json_decode($info, true);
 
-        $equipments = $this->getEquipments($arr['Equipments']);
+        $this->equipments = $this->getEquipments($arr['Equipments']);
+        if($this->equipments) $this->countEquipments = count($this->equipments);
 
-        if($equipments) $this->countEquipments = count($equipments);
+        $this->resources = $this->getResources($arr['Resources']);
 
-        $resources = $this->getResources($arr['Resources']);
-
-        if($resources) $this->countResources = count($resources);
+        if($this->resources) $this->countResources = count($this->resources);
 
         $this->bagEmpty = $this->bagCount - $this->countEquipments - $this->countResources;
 
         if ($this->bagCount % 10 === 0) {
-            $this->bagLock = 10;
+            $this->bagLock = 9;
         } else {
-            $this->bagLock = 10 + 10 - $this->bagCount % 10;
+            $this->bagLock = 9 + 10 - $this->bagCount % 10;
         }
 
-        return array_merge($equipments, $resources);
+        $this->items = array_merge($this->equipments, $this->resources);
+    }
+
+    public function getItems()
+    {
+        return $this->items;
     }
 
     protected function getResources($arItems)
@@ -53,6 +61,7 @@ class Rucksack
             if ($arr[$item['index']]) {
 
                 $arr[$item['index']]['count'] = $item['count'];
+                $arr[$item['index']]['index'] = $item['index'];
                 $res[] = $arr[$item['index']];
 
             }
@@ -75,6 +84,7 @@ class Rucksack
             if ($arr[$item['index']]) {
 
                 $arr[$item['index']]['count'] = $item['count'];
+                $arr[$item['index']]['index'] = $item['index'];
                 $res[] = $arr[$item['index']];
 
             }
