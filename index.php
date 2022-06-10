@@ -8,8 +8,10 @@
 </head>
 <body>
 <?
+
 use classes\Equipment;
 use classes\Rucksack;
+
 ?>
 
 <? require_once 'template/header.php' ?>
@@ -17,54 +19,62 @@ use classes\Rucksack;
 <div class="game_container">
     <? $ammunition = new Equipment();
     $equipment = $ammunition->getEquipment()['equipment'];
-//    print_debug($equipment);?>
+    //    print_debug($equipment);?>
     <div class="all_information_block">
         <div class="equipment_block">
             <div class="equipment_main">
                 <div class="equipment_first">
                     <div class="equipment_item5 equipment_sword">
                         <img class="equipment_item_img"
-                             src="<?=$equipment['sword']['img']?>"
-                             title="<?=$equipment['sword']['title']?>">
+                             src="<?= $equipment['sword']['img'] ?>"
+                             title="<?= $equipment['sword']['title'] ?>"
+                             data-class="sword">
                     </div>
                     <div class="equipment_item4 equipment_shield">
                         <img class="equipment_item_img"
-                             src="<?=$equipment['shield']['img']?>"
-                             title="<?=$equipment['shield']['title']?>">
+                             src="<?= $equipment['shield']['img'] ?>"
+                             title="<?= $equipment['shield']['title'] ?>"
+                             data-class="shield">
                     </div>
                 </div>
                 <div class="equipment_second">
                     <div class="equipment_item5 equipment_armor">
                         <img class="equipment_item_img"
-                             src="<?=$equipment['armor']['img']?>"
-                             title="<?=$equipment['armor']['title']?>">
+                             src="<?= $equipment['armor']['img'] ?>"
+                             title="<?= $equipment['armor']['title'] ?>"
+                             data-class="armor">
                     </div>
                     <div class="equipment_item4 equipment_pants">
                         <img class="equipment_item_img"
-                             src="<?=$equipment['pants']['img']?>"
-                             title="<?=$equipment['pants']['title']?>">
+                             src="<?= $equipment['pants']['img'] ?>"
+                             title="<?= $equipment['pants']['title'] ?>"
+                             data-class="pants">
                     </div>
                 </div>
                 <div class="equipment_third">
                     <div class="equipment_item3 equipment_helmet">
                         <img class="equipment_item_img"
-                             src="<?=$equipment['helmet']['img']?>"
-                             title="<?=$equipment['helmet']['title']?>">
+                             src="<?= $equipment['helmet']['img'] ?>"
+                             title="<?= $equipment['helmet']['title'] ?>"
+                             data-class="helmet">
                     </div>
                     <div class="equipment_item1 equipment_gloves">
                         <img class="equipment_item_img"
-                             src="<?=$equipment['gloves']['img']?>"
-                             title="<?=$equipment['gloves']['title']?>">
+                             src="<?= $equipment['gloves']['img'] ?>"
+                             title="<?= $equipment['gloves']['title'] ?>"
+                             data-class="gloves">
                     </div>
                     <div class="equipment_item1 equipment_belt">
                         <img class="equipment_item_img"
-                             src="<?=$equipment['belt']['img']?>"
-                             title="<?=$equipment['belt']['title']?>">
+                             src="<?= $equipment['belt']['img'] ?>"
+                             title="<?= $equipment['belt']['title'] ?>"
+                             data-class="belt">
                     </div>
                     <div class="equipment_item3 equipment_boots">
                         <img class="equipment_item_img"
-                             src="<?=$equipment['boots']['img']?>"
-                             title="<?=$equipment['boots']['title']?>">
+                             src="<?= $equipment['boots']['img'] ?>"
+                             title="<?= $equipment['boots']['title'] ?>"
+                             data-class="boots">
                     </div>
                 </div>
             </div>
@@ -94,7 +104,7 @@ use classes\Rucksack;
         </div>
         <div class="skills_att_def_block">
             <div class="skills_block">
-                <?php $arSkills = $hero->getHeroSection('skills')?>
+                <?php $arSkills = $hero->getHeroSection('skills') ?>
                 <?php foreach ($arSkills['skills'] as $skill): ?>
                     <div class="skills_position" data-type="<?= $skill['index'] ?>">
                         <div class="skills_name"><?= $skill['name'] ?></div>
@@ -200,11 +210,12 @@ use classes\Rucksack;
             console.log(data)
 
             $.ajax({
-                url: "ajax/equipment.php",
+                url: "ajax/equipment/",
                 // dataType: "json", // Для использования JSON формата получаемых данных
                 method: "POST", // Что бы воспользоваться POST методом, меняем данную строку на POST
                 data,
-                success: function(data) {
+                success: function (data) {
+                    location.reload()
 
                     console.log(data); // Возвращаемые данные выводим в консоль
                 }
@@ -217,10 +228,24 @@ use classes\Rucksack;
             // cell.append('<img class="equipment_item_img equip_item" src="' + $(this).attr('src') +'" alt="">')
         })
 
-        $('.equip_item').on('click', function () {
-            console.log('tyt')
-            $(this).remove()
-            $(this).parent().find('.equip_empty').show()
+        $('.equipment_item_img').on('click', function () {
+
+            data = {
+                'operation': 'remove',
+                'class': $(this).data('class'),
+            }
+
+            $.ajax({
+                url: "ajax/equipment/",
+                // dataType: "json", // Для использования JSON формата получаемых данных
+                method: "POST", // Что бы воспользоваться POST методом, меняем данную строку на POST
+                data,
+                success: function (data) {
+                    location.reload()
+
+                    console.log(data); // Возвращаемые данные выводим в консоль
+                }
+            });
         })
     })
 </script>

@@ -25,7 +25,7 @@ class Hero
     }
 
     protected function loadSectionInfo($section){
-        $this->heroInfo[$section] = $this->loadFile('files/' . $section . '.json');
+        $this->heroInfo[$section] = $this->loadFile('/files/' . $section . '.json');
     }
 
     public function getHeroSection($section){

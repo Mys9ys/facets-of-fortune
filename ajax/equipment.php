@@ -1,9 +1,7 @@
-<?
-require_once $_SERVER['DOCUMENT_ROOT'] . '/classes/internal_settings.php';
-use \classes\Equipment;
-?>
-
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/classes/internal_settings.php';
+use classes\Equipment;
+
 $equip = new Equipment();
 var_dump($equip->getEquipment());
 $_REQUEST =[

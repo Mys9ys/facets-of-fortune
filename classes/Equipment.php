@@ -32,7 +32,7 @@ class Equipment
 
     protected $equipmentSet = [];
     protected $equipImgDir = '/img/equip_temp/';
-    protected $equipFile = 'files/equipment.json';
+    protected $equipFile = '/files/equipment.json';
 
     protected $emptyJewelryImg = [
         'ring',
@@ -42,6 +42,7 @@ class Equipment
 
     public function __construct(){
         $this->loadEquipment();
+
     }
 
     public function getEquipment(){
@@ -50,22 +51,30 @@ class Equipment
 
     protected function loadEquipment(){
         $heroEquip = $this->loadFile($this->equipFile);
+
         foreach ($this->equipmentTemplate['equipment'] as $equip){
-            if(!$heroEquip[$equip]){
+            if(!$heroEquip['equipment'][$equip]){
                 $this->equipmentSet['equipment'][$equip]['img'] = $this->equipImgDir.$equip. '.png';
                 $this->equipmentSet['equipment'][$equip]['title'] = 'Не надето';
+            } else {
+                $this->equipmentSet['equipment'][$equip]['img'] = $heroEquip['equipment'][$equip]['img'];
+                $this->equipmentSet['equipment'][$equip]['title'] = $heroEquip['equipment'][$equip]['title'];
             }
         }
     }
 
     public function setEquipItem($section, $class, $item){
 
-        $this->equipmentSet[$section][$class]['img'] = 'equip/' . $class . '/' .$item . '.png';
+        $this->equipmentSet[$section][$class]['img'] = '/img/equip/' . $class . '/' .$item . '.png';
+        $this->equipmentSet[$section][$class]['title'] = '';
 
-        $fp = fopen('equipment_test.json','w');
-        fwrite($fp, json_encode($this->equipmentSet));
-        fclose($fp);
-        return 'tut';
-//        $this->saveFile($this->equipFile, $heroEquip);
+        $this->saveFile($this->equipFile, $this->equipmentSet);
+    }
+
+    public function removeItem($section, $class){
+        $this->equipmentSet[$section][$class]['img'] = $this->equipImgDir.$class. '.png';
+        $this->equipmentSet[$section][$class]['title'] = 'Не надето';
+
+        $this->saveFile($this->equipFile, $this->equipmentSet);
     }
 }

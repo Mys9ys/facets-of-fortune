@@ -1,9 +1,10 @@
 <link rel="stylesheet" href="<?$_SERVER['DOCUMENT_ROOT']?>/template/style.min.css">
 <?require_once 'config_header.php'?>
-<?require_once $_SERVER['DOCUMENT_ROOT'] . '/classes/internal_settings.php'?>
-<?require_once $_SERVER['DOCUMENT_ROOT'] . '/tech_lib/functions.php'?>
+<?include_once $_SERVER['DOCUMENT_ROOT'] . '/classes/internal_settings.php'?>
+<?include_once $_SERVER['DOCUMENT_ROOT'] . '/tech_lib/functions.php'?>
 
-<?php use classes\Hero;
+<?php
+use \classes\Hero;
 $hero = new Hero()?>
 <script src="/vendor/jquery-1.8.2.min.js"></script>
 
