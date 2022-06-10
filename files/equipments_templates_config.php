@@ -31,7 +31,7 @@ $arr['shield_1'] = [
 
 ];
 
-$fp = fopen('equipments.json','w');
+$fp = fopen('equipments_template.json','w');
 fwrite($fp, json_encode($arr));
 fclose($fp);
 

@@ -2,20 +2,24 @@
 <?require_once 'config_header.php'?>
 <?require_once $_SERVER['DOCUMENT_ROOT'] . '/classes/internal_settings.php'?>
 <?require_once $_SERVER['DOCUMENT_ROOT'] . '/tech_lib/functions.php'?>
+
+<?php use classes\Hero;
+$hero = new Hero()?>
 <script src="/vendor/jquery-1.8.2.min.js"></script>
 
 <div class="header_container">
     <div class="header">
-        <?php $Hero = $arHeader['heroInfo']?>
+
+        <?php $arHero = $hero->getHeroSection('main_info')?>
         <img class="hero_img" src="/img/hero.png" alt="">
         <div class="hero_info_block">
-            <div class="hero_nickname"><?=$Hero['nickname']?></div>
-            <div class="hero_lvl">lvl: <?=$Hero['lvl']?></div>
-            <div class="hero_hp"><?=$Hero['hp']?>/<?=$Hero['hp_now']?></div>
-            <div class="hero_xp"><?=$Hero['xp']?></div>
+            <div class="hero_nickname"><?=$arHero['nickname']?></div>
+            <div class="hero_lvl">lvl: <?=$arHero['lvl']?></div>
+            <div class="hero_hp"><?=$arHero['hp']?>/<?=$arHero['hp_now']?></div>
+            <div class="hero_xp"><?=$arHero['xp']?>/<?=$arHero['xp_for_up']?></div>
         </div>
         <div class="money_block">
-            <?php foreach ($arHeader['money'] as $money):?>
+            <?php foreach ($hero->getHeroSection('money') as $money):?>
                 <div class="money_box">
                     <img class="money_img" src="/img/money/<?=$money['index']?>.png" alt="" title="<?=$money['name']?>"><div class="money_count"><?=$money['count']?></div>
                 </div>

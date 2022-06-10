@@ -5,7 +5,7 @@ namespace classes;
 class Rucksack
 {
     protected $heroConfigUrl = 'hero/hero.json';
-    protected $equipmentsUrl = 'files/equipments.json';
+    protected $equipmentsUrl = 'files/equipments_template.json';
     protected $resourcesUrl = 'files/resources.json';
 
     public $bagCount = 32;

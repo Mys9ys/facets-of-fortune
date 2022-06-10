@@ -7,85 +7,107 @@
 
 </head>
 <body>
-<? use classes\Rucksack;
+<?
+use classes\Equipment;
+use classes\Rucksack;
+?>
 
-require_once 'config_hero.php' ?>
 <? require_once 'template/header.php' ?>
-<div class="game_container">
 
+<div class="game_container">
+    <? $ammunition = new Equipment();
+    $equipment = $ammunition->getEquipment()['equipment'];
+//    print_debug($equipment);?>
     <div class="all_information_block">
         <div class="equipment_block">
             <div class="equipment_main">
                 <div class="equipment_first">
                     <div class="equipment_item5 equipment_sword">
-                        <img class="equipment_item_img equip_empty" src="/img/equip_temp/sword.png" alt="">
+                        <img class="equipment_item_img"
+                             src="<?=$equipment['sword']['img']?>"
+                             title="<?=$equipment['sword']['title']?>">
                     </div>
                     <div class="equipment_item4 equipment_shield">
-                        <img class="equipment_item_img equip_empty" src="/img/equip_temp/shield.png" alt="">
+                        <img class="equipment_item_img"
+                             src="<?=$equipment['shield']['img']?>"
+                             title="<?=$equipment['shield']['title']?>">
                     </div>
                 </div>
                 <div class="equipment_second">
                     <div class="equipment_item5 equipment_armor">
-                        <img class="equipment_item_img equip_empty" src="/img/equip_temp/armor.png" alt="">
+                        <img class="equipment_item_img"
+                             src="<?=$equipment['armor']['img']?>"
+                             title="<?=$equipment['armor']['title']?>">
                     </div>
                     <div class="equipment_item4 equipment_pants">
-                        <img class="equipment_item_img equip_empty" src="/img/equip_temp/pants.png" alt="">
+                        <img class="equipment_item_img"
+                             src="<?=$equipment['pants']['img']?>"
+                             title="<?=$equipment['pants']['title']?>">
                     </div>
                 </div>
                 <div class="equipment_third">
                     <div class="equipment_item3 equipment_helmet">
-                        <img class="equipment_item_img equip_empty" src="/img/equip_temp/helmet.png" alt="">
+                        <img class="equipment_item_img"
+                             src="<?=$equipment['helmet']['img']?>"
+                             title="<?=$equipment['helmet']['title']?>">
                     </div>
                     <div class="equipment_item1 equipment_gloves">
-                        <img class="equipment_item_img equip_empty" src="/img/equip_temp/gloves.png" alt="">
+                        <img class="equipment_item_img"
+                             src="<?=$equipment['gloves']['img']?>"
+                             title="<?=$equipment['gloves']['title']?>">
                     </div>
                     <div class="equipment_item1 equipment_belt">
-                        <img class="equipment_item_img equip_empty" src="/img/equip_temp/belt.png" alt="">
+                        <img class="equipment_item_img"
+                             src="<?=$equipment['belt']['img']?>"
+                             title="<?=$equipment['belt']['title']?>">
                     </div>
                     <div class="equipment_item3 equipment_boots">
-                        <img class="equipment_item_img equip_empty" src="/img/equip_temp/boots.png" alt="">
+                        <img class="equipment_item_img"
+                             src="<?=$equipment['boots']['img']?>"
+                             title="<?=$equipment['boots']['title']?>">
                     </div>
                 </div>
             </div>
             <div class="equipment_jewelry">
                 <div class="jewelry_item1 equipment_ring1">
-                    <img class="jewelry_item_img equip_empty" src="/img/equip_temp/ring.png" alt="">
+                    <img class="jewelry_item_img " src="/img/equip_temp/ring.png" alt="">
                 </div>
                 <div class="jewelry_item1 equipment_ring2">
-                    <img class="jewelry_item_img equip_empty" src="/img/equip_temp/ring.png" alt="">
+                    <img class="jewelry_item_img " src="/img/equip_temp/ring.png" alt="">
                 </div>
                 <div class="jewelry_item1 equipment_ring3">
-                    <img class="jewelry_item_img equip_empty" src="/img/equip_temp/ring.png" alt="">
+                    <img class="jewelry_item_img " src="/img/equip_temp/ring.png" alt="">
                 </div>
                 <div class="jewelry_item1 equipment_ring4">
-                    <img class="jewelry_item_img equip_empty" src="/img/equip_temp/ring.png" alt="">
+                    <img class="jewelry_item_img " src="/img/equip_temp/ring.png" alt="">
                 </div>
                 <div class="jewelry_item3 equipment_necklace">
-                    <img class="jewelry_item_img equip_empty" src="/img/equip_temp/necklace.png" alt="">
+                    <img class="jewelry_item_img " src="/img/equip_temp/necklace.png" alt="">
                 </div>
                 <div class="jewelry_item1 equipment_bracelet1">
-                    <img class="jewelry_item_img equip_empty" src="/img/equip_temp/bracelet.png" alt="">
+                    <img class="jewelry_item_img " src="/img/equip_temp/bracelet.png" alt="">
                 </div>
                 <div class="jewelry_item1 equipment_bracelet2">
-                    <img class="jewelry_item_img equip_empty" src="/img/equip_temp/bracelet.png" alt="">
+                    <img class="jewelry_item_img " src="/img/equip_temp/bracelet.png" alt="">
                 </div>
             </div>
         </div>
         <div class="skills_att_def_block">
             <div class="skills_block">
-                <?php foreach ($arHero['heroSkills'] as $skill): ?>
+                <?php $arSkills = $hero->getHeroSection('skills')?>
+                <?php foreach ($arSkills['skills'] as $skill): ?>
                     <div class="skills_position" data-type="<?= $skill['index'] ?>">
                         <div class="skills_name"><?= $skill['name'] ?></div>
                         <div class="skills_count_box">
                             <div class="skills_count"><?= $skill['count'] ?></div>
-                            <div class="skills_up <?php if ($arHero['skill_up']) echo 'skills_up_vis' ?>">+</div>
+                            <div class="skills_up <?php if ($arSkills['skill_up']) echo 'skills_up_vis' ?>">+</div>
                         </div>
                     </div>
                 <?php endforeach; ?>
             </div>
 
             <div class="attack_defence_desc_block">
-                <?php foreach ($arHero['heroAttackDefence'] as $elem): ?>
+                <?php foreach ($hero->getHeroSection('battle_stats') as $elem): ?>
                     <div class="add_position" data-type="<?= $elem['index'] ?>">
                         <div class="add_name"><?= $elem['name'] ?></div>
                         <div class="add_count_box">
@@ -96,7 +118,7 @@ require_once 'config_hero.php' ?>
             </div>
         </div>
         <div class="property_block">
-            <?php foreach ($arHero['heroProperty'] as $prop): ?>
+            <?php foreach ($hero->getHeroSection('additional_skills') as $prop): ?>
                 <div class="prop_position" data-type="<?= $prop['index'] ?>">
                     <div class="prop_name"><?= $prop['name'] ?></div>
                     <div class="prop_count_box">
@@ -107,7 +129,7 @@ require_once 'config_hero.php' ?>
         </div>
 
         <div class="craft_block">
-            <?php foreach ($arHero['heroCraft'] as $prop): ?>
+            <?php foreach ($hero->getHeroSection('craft_stats') as $prop): ?>
                 <div class="craft_position" data-type="<?= $prop['index'] ?>">
                     <div class="craft_name"><?= $prop['name'] ?></div>
                     <div class="craft_count_box">
@@ -170,12 +192,29 @@ require_once 'config_hero.php' ?>
 <script>
     $(document).ready(function () {
         $('.click_equip').on('click', function () {
+            data = {
+                'operation': 'put_on',
+                'class': $(this).data('class'),
+                'item': $(this).data('index')
+            }
+            console.log(data)
 
-            cell = $('.equipment_' + $(this).data('class'))
+            $.ajax({
+                url: "ajax/equipment.php",
+                // dataType: "json", // Для использования JSON формата получаемых данных
+                method: "POST", // Что бы воспользоваться POST методом, меняем данную строку на POST
+                data,
+                success: function(data) {
 
+                    console.log(data); // Возвращаемые данные выводим в консоль
+                }
+            });
 
-            cell.find('.equip_empty').hide()
-            cell.append('<img class="equipment_item_img equip_item" src="' + $(this).attr('src') +'" alt="">')
+            // cell = $('.equipment_' + $(this).data('class'))
+            //
+            //
+            // cell.find('.equip_empty').hide()
+            // cell.append('<img class="equipment_item_img equip_item" src="' + $(this).attr('src') +'" alt="">')
         })
 
         $('.equip_item').on('click', function () {

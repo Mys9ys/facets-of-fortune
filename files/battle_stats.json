@@ -1,0 +1,26 @@
+[
+  {
+    "name": "\u0410\u0442\u0430\u043a\u0430 \u043e\u0440\u0443\u0436\u0438\u0435\u043c",
+    "index": "attack_weapon",
+    "min": 0,
+    "max": 0
+  },
+  {
+    "name": "\u0410\u0442\u0430\u043a\u0430 \u043c\u0430\u0433\u0438\u0435\u0439",
+    "index": "attack_magic",
+    "min": 0,
+    "max": 0
+  },
+  {
+    "name": "\u0417\u0430\u0449\u0438\u0442\u0430 \u043e\u0442 \u043e\u0440\u0443\u0436\u0438\u044f",
+    "index": "defense_weapon",
+    "min": 0,
+    "max": 0
+  },
+  {
+    "name": "\u0417\u0430\u0449\u0438\u0442\u0430 \u043e\u0442 \u043c\u0430\u0433\u0438\u0438",
+    "index": "defense_magic",
+    "min": 0,
+    "max": 0
+  }
+]

@@ -25,15 +25,17 @@ $arHero = [
         ['name'=>'Защита от магии', 'index' => 'defense_magic', 'min' => 0, 'max' => 0],
     ],
     'heroProperty' => [
-        ['name'=>'Скорость', 'index' => 'defense_magic', 'count' => 0],
-        ['name'=>'Уворот', 'index' => 'defense_magic', 'count' => 0],
-        ['name'=>'Критический удар', 'index' => 'defense_magic', 'count' => 0],
-        ['name'=>'Заживление', 'index' => 'defense_magic', 'count' => 0],
-        ['name'=>'Кровотечение', 'index' => 'defense_magic', 'count' => 0],
-        ['name'=>'Пробитие брони', 'index' => 'defense_magic', 'count' => 0],
-        ['name'=>'Скорость', 'index' => 'defense_magic', 'count' => 0],
-        ['name'=>'Скорость', 'index' => 'defense_magic', 'count' => 0],
-        ['name'=>'Скорость', 'index' => 'defense_magic', 'count' => 0],
+        ['name'=>'Скорость', 'index' => 'speed', 'count' => 0, 'desc' => 'Скорость передвижения/крафта'],
+        ['name'=>'Уворот', 'index' => 'avoid', 'count' => 0, 'desc' => 'Возможность избежать удара противника'],
+        ['name'=>'Критический удар', 'index' => 'defense_magic', 'count' => 0, 'desc' => 'Удвоение атаки'],
+        ['name'=>'Сглаз', 'index' => 'defense_magic', 'count' => 0, 'desc' => 'Снижение атаки противника в 2 раза'],
+        ['name'=>'Контратака', 'index' => 'defense_magic', 'count' => 0, 'desc' => 'Нанесение противнику половину урона нанесенного им'],
+        ['name'=>'Вампиризм', 'index' => 'defense_magic', 'count' => 0, 'desc' => 'Восстановление собственной жизни: половина от силы атаки'],
+        ['name'=>'Разрушение брони', 'index' => 'defense_magic', 'count' => 0, 'desc' => 'Снижение защиты врага в 2 раза'],
+        ['name'=>'Заживление', 'index' => 'defense_magic', 'count' => 0, 'desc' => 'Восстановление собственного здоровья'],
+        ['name'=>'Кровотечение', 'index' => 'defense_magic', 'count' => 0, 'desc' => 'Снижение здоровья противника в хп за ход'],
+
+
     ],
     'heroCraft' => [
         ['name'=>'Собиратель', 'index' => 'defense_magic', 'count' => 0, 'lvl'=>0],

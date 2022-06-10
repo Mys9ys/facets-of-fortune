@@ -5,7 +5,8 @@ $arHeader = [
         'lvl' => 1,
         'hp'=> 10,
         'hp_now' => 10,
-        'xp'=> 0
+        'xp'=> 0,
+        'xp_for_up'=> 0
     ],
     'money' => [
         ['name'=> 'Золото', 'index'=>'gold', 'count'=> 5],
