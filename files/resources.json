@@ -3,14 +3,14 @@
     "name": "\u0421\u043c\u043e\u0440\u043e\u0434\u0438\u043d\u0430",
     "type": "resources",
     "class": "berry",
-    "img": "img\/resources\/berry\/currant.png",
+    "img": "\/img\/resources\/berry\/currant.png",
     "index": "currant"
   },
   "coal": {
     "name": "\u0423\u0433\u043e\u043b\u044c",
     "type": "resources",
     "class": "extraction",
-    "img": "img\/resources\/extraction\/coal.png",
+    "img": "\/img\/resources\/extraction\/coal.png",
     "index": "coal"
   }
 }

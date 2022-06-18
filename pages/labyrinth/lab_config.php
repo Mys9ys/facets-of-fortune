@@ -1,5 +1,8 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . "/labyrinth/CreateLabyrinth.php");
+
+use classes\CreateLabyrinth;
+
+//require_once($_SERVER['DOCUMENT_ROOT'] . "/pages/labyrinth/create_labyrinth.php");
 //$arLab = [
 //    range(0, 2),
 //    range(0, 2),

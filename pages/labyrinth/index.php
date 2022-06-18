@@ -1,7 +1,9 @@
-<link rel="stylesheet" href="/labyrinth/style.min.css">
-<? require_once $_SERVER['DOCUMENT_ROOT'] . '/template/header.php' ?>
-<? require_once $_SERVER['DOCUMENT_ROOT'] . '/labyrinth/lab_config.php' ?>
-<?require_once($_SERVER['DOCUMENT_ROOT'] . "/labyrinth/CreateLabyrinth.php");
+<link rel="stylesheet" href="style.min.css">
+<? use classes\CreateLabyrinth;
+
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template/header.php' ?>
+<? require_once $_SERVER['DOCUMENT_ROOT'] . '/pages/labyrinth/lab_config.php' ?>
+<?// require_once($_SERVER['DOCUMENT_ROOT'] . '/pages/labyrinth/create_labyrinth.php');
 $lab = new CreateLabyrinth();
 $size = $lab->getSize()?>
 <div class="labyrinth_container">

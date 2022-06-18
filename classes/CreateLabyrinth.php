@@ -1,5 +1,6 @@
 <?php
 
+namespace classes;
 class CreateLabyrinth
 {
     private $arWall = [];
@@ -33,7 +34,7 @@ class CreateLabyrinth
             }
         }
 
-        var_dump($this->sumWall);
+//        var_dump($this->sumWall);
         return $this->arWall;
     }
 
@@ -101,7 +102,7 @@ class CreateLabyrinth
         $this->arWall[$row][$col] = array_unique($this->arWall[$row][$col], SORT_REGULAR);
 
         if (count($this->arWall[$row][$col]) === 3) {
-            var_dump($row . '- ' . $col);
+//            var_dump($row . '- ' . $col);
         }
     }
 

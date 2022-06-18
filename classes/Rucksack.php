@@ -4,9 +4,11 @@ namespace classes;
 
 class Rucksack
 {
-    protected $heroConfigUrl = 'hero/hero.json';
-    protected $equipmentsUrl = 'files/equipments_template.json';
-    protected $resourcesUrl = 'files/resources.json';
+    use BaseMethods;
+
+    protected $heroConfigUrl = '/files/hero.json';
+    protected $equipmentsUrl = '/files/equipments_template.json';
+    protected $resourcesUrl = '/files/resources.json';
 
     public $bagCount = 32;
     public $bagEmpty;
@@ -21,9 +23,8 @@ class Rucksack
 
     public function __construct()
     {
-        $info = file_get_contents($this->heroConfigUrl);
 
-        $arr = json_decode($info, true);
+        $arr = $this->loadFile($this->heroConfigUrl);
 
         $this->equipments = $this->getEquipments($arr['Equipments']);
         if($this->equipments) $this->countEquipments = count($this->equipments);
@@ -50,9 +51,8 @@ class Rucksack
 
     protected function getResources($arItems)
     {
-        $info = file_get_contents($this->resourcesUrl);
 
-        $arr = json_decode($info, true);
+        $arr = $this->loadFile($this->resourcesUrl);
 
         $res = [];
 
@@ -73,9 +73,7 @@ class Rucksack
     protected function getEquipments($arItems)
     {
 
-        $info = file_get_contents($this->equipmentsUrl);
-
-        $arr = json_decode($info, true);
+        $arr = $this->loadFile($this->equipmentsUrl);
 
         $res = [];
 

@@ -28,9 +28,9 @@ function createLabyrinth($row, $col, $intensity)
         }
     }
 
-    var_dump($sumWall);
+//    var_dump($sumWall);
     echo '<pre>';
-    var_dump($arWall);
+//    var_dump($arWall);/
     echo '</pre>';
 
 }
