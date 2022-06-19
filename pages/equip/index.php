@@ -6,7 +6,7 @@ use classes\Rucksack;
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template/header.php'
 ?>
 
-<div class="game_container">
+<div class="container">
     <? $ammunition = new Equipment();
     $equipment = $ammunition->getEquipment()['equipment'];
     //    print_debug($equipment);?>

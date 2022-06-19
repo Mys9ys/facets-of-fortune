@@ -1,0 +1,26 @@
+@colorText: rgb(166, 178, 170);
+.city_container{
+  display: flex;
+  .city_info {
+    width: 250px;
+
+    .city_title{
+      color:@colorText;
+    }
+
+    .city_img {
+      display: inline-block;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .city_buildings{
+    width: 100%;
+    min-height: 300px;
+    border: 2px solid @colorText;
+    border-radius: 5px;
+  }
+}

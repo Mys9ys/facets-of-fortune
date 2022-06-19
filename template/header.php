@@ -33,7 +33,7 @@
 <?php
 use classes\Hero;
 $hero = new Hero()?>
-<div class="header_container">
+<div class="container">
     <div class="header">
 
         <?php $arHero = $hero->getHeroSection('main_info')?>
@@ -53,8 +53,14 @@ $hero = new Hero()?>
         </div>
 
         <div class="btn_block">
+            <a class="header_btn" href="/pages/map">
+                <img class="header_btn_img" src="/img/header/map.png" alt="" title="Карта">
+            </a>
             <a class="header_btn" href="/pages/equip">
                 <img class="header_btn_img" src="/img/header/rucksack.png" alt="" title="Инвентарь">
+            </a>
+            <a class="header_btn" href="/pages/quests">
+                <img class="header_btn_img" src="/img/header/quest.png" alt="" title="Квесты">
             </a>
             <a class="header_btn" href="/pages/battle">
                 <img class="header_btn_img" src="/img/header/btn_battle.png" alt="" title="Битва">
