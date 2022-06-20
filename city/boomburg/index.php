@@ -14,7 +14,7 @@
         </div>
         <div class="city_buildings">
             <div class="city_grid">
-
+                <img src="" alt="">
             </div>
         </div>
     </div>
