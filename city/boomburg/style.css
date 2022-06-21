@@ -1,0 +1,27 @@
+.city_container {
+  display: flex;
+}
+.city_container .city_info {
+  width: 250px;
+}
+.city_container .city_info .city_title {
+  color: #a6b2aa;
+}
+.city_container .city_info .city_img {
+  display: inline-block;
+  width: 100%;
+}
+.city_container .city_info .city_img img {
+  width: 100%;
+}
+.city_container .city_buildings {
+  width: 100%;
+  min-height: 300px;
+  border: 2px solid #a6b2aa;
+  border-radius: 5px;
+}
+.city_container .city_buildings .city_grid .building_img {
+  width: 60px;
+  height: 60px;
+}
+/*# sourceMappingURL=style.css.map */

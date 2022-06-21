@@ -9,12 +9,14 @@
                 Город Boomburg
             </div>
             <div class="city_img">
-                <img src="/img/city/boomburg.png" alt="">
+                <img src="/img/city/city.png" alt="">
             </div>
         </div>
         <div class="city_buildings">
             <div class="city_grid">
-                <img src="" alt="">
+                <a href="/city/boomburg/buildings/citadel">
+                    <img class="building_img" src="/img/buildings/citadel.png" alt="">
+                </a>
             </div>
         </div>
     </div>
