@@ -1,10 +1,22 @@
 <link rel="stylesheet" href="style.min.css">
 <?php
-
-require_once $_SERVER['DOCUMENT_ROOT'] . '/template/header.php'
+use classes\Map;
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template/header.php';
+$map = new Map();
 ?>
+
 <div class="container">
-    <a class="city_icon" href="/city/boomburg">
-        <img src="/img/city/city.png" alt="" title="Boomburg">
-    </a>
+    <div class="map_container">
+
+        <?php for ($y = 0; $y < 8; $y++): ?>
+           <div class="map_row">
+               <?php for ($x = 0; $x < 25; $x++): ?>
+                   <div class="map_cell" data-x="<?=$x?>" data-y="<?=$y?>">
+                       <?=$map->plantRegion($x,$y)?>
+                   </div>
+               <?php endfor; ?>
+           </div>
+        <?php endfor; ?>
+    </div>
 </div>
+

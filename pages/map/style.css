@@ -1,0 +1,24 @@
+.city_icon {
+  width: 60px;
+  display: inline-block;
+}
+.city_icon img {
+  width: 100%;
+}
+.map_container {
+  width: 100%;
+  min-height: 400px;
+  border: 2px solid #a6b2aa;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.map_container .map_row {
+  width: 100%;
+  display: flex;
+}
+.map_container .map_row .map_cell {
+  width: 4%;
+  height: 50px;
+}
+/*# sourceMappingURL=style.css.map */

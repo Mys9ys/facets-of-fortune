@@ -1,7 +1,26 @@
+@colorText: rgb(166, 178, 170);
 .city_icon{
   width:60px;
   display: inline-block;
   img{
     width: 100%;
+  }
+}
+.map_container{
+  width: 100%;
+  min-height: 400px;
+  border: 2px solid @colorText;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  .map_row{
+    width: 100%;
+    display: flex;
+    .map_cell{
+      width: 4%;
+      height: 50px;
+      //border-right: 1px solid @colorText;
+      //border-bottom: 1px solid @colorText;
+    }
   }
 }
