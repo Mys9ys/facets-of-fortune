@@ -19,7 +19,9 @@ $arNpc = $loc->getArNpc()
             </div>
         </div>
         <div class="location_actions">
+            <?var_dump($arNpc)?>
             <?php foreach ($arNpc as $key=>$npc):?>
+                <h1>fvd</h1>
             <?php endforeach;?>
         </div>
     </div>
