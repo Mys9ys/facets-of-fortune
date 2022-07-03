@@ -1,16 +1,18 @@
 @colorText: rgb(166, 178, 170);
 .location_container {
   width: 100%;
+  display: flex;
 
   .location_info {
     display: inline-block;
     width: 20%;
 
-    .location_name{
+    .location_name {
       font-size: 24px;
       color: @colorText;
       text-align: right;
     }
+
     .location_img {
       width: 100%;
 
@@ -19,4 +21,28 @@
       }
     }
   }
+
+  .location_actions {
+    width: 80%;
+    display: flex;
+    padding-top: 50px;
+
+    .location_npc_box {
+      width: 60px;
+      display: flex;
+      flex-direction: column;
+
+      .item_npc_box {
+        width: 100%;
+        border: 2px solid @colorText;
+        background: rgba(33,33,33,.4);
+        border-radius: 5px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
 }

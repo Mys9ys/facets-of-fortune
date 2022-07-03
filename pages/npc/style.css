@@ -1,0 +1,35 @@
+.npc_container {
+  width: 100%;
+  display: flex;
+  padding-top: 15px;
+}
+.npc_container .npc_info {
+  display: inline-block;
+  width: 20%;
+}
+.npc_container .npc_info .npc_name {
+  font-size: 24px;
+  color: #a6b2aa;
+  text-align: right;
+}
+.npc_container .npc_info .npc_img {
+  width: 100%;
+  border: 2px solid #a6b2aa;
+  background: rgba(33, 33, 33, 0.4);
+  border-radius: 5px;
+}
+.npc_container .npc_info .npc_img img {
+  width: 100%;
+}
+.npc_container .npc_quests {
+  width: 60%;
+  padding-top: 10px;
+  padding-left: 25px;
+}
+.npc_container .npc_quests #questTab {
+  border-bottom: 2px solid #a6b2aa;
+}
+.npc_container .npc_quests .nav_quest {
+  color: #a6b2aa;
+}
+/*# sourceMappingURL=style.css.map */

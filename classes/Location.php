@@ -15,11 +15,24 @@ class Location
     public function __construct($id)
     {
         $this->loadInfo($id);
+        $this->loadNPC();
     }
 
-    protected function loadInfo($id){
+    protected function loadInfo($id)
+    {
         $this->locInfo = $this->loadFile($this->fileLoc)[$id];
-        $this->arNpc = $this->loadFile($this->fileNpc)[$id];
+    }
+
+    protected function loadNPC()
+    {
+        $arNpcIds = $this->locInfo['npc'];
+        if ($arNpcIds) {
+
+            foreach ($arNpcIds as $id) {
+                $this->arNpc[] = $this->loadFile($this->fileNpc)[$id];
+            }
+
+        }
     }
 
     /**

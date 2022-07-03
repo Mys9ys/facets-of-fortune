@@ -19,10 +19,13 @@ $arNpc = $loc->getArNpc()
             </div>
         </div>
         <div class="location_actions">
-            <?var_dump($arNpc)?>
-            <?php foreach ($arNpc as $key=>$npc):?>
-                <h1>fvd</h1>
-            <?php endforeach;?>
+            <div class="location_npc_box">
+                <?php foreach ($arNpc as $key=>$npc):?>
+                    <a class="item_npc_box" title="<?=$npc['name']?>" href="/pages/npc?id=<?= $key?>">
+                        <img src="<?= $npc['img']?>" alt="">
+                    </a>
+                <?php endforeach;?>
+            </div>
         </div>
     </div>
 </div>
