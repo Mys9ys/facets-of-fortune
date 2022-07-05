@@ -19,7 +19,8 @@ $arr['1'] = [
             'answer' => [
                 ['text' => 'Спасибо! Уже бегу.', 'action' => 'accept #1'],
                 ['text' => 'Может позже...', 'action' => 'exit'],
-            ]
+            ],
+            'item' => []
         ],
         [
             'npc' => 1,
@@ -45,6 +46,14 @@ $arr['1'] = [
                 ['text' => 'Можно я еще похожу?', 'action' => 'exit'],
             ]
         ]
+
+    ],
+    'reward' => [
+        ['class' =>'potion', 'index'=>'xp_potion_10', 'count' => 1],
+        ['class'=> 'money', 'index'=>'cuprum', 'count'=>10]
+
+    ],
+    'conditions' => [
 
     ]
 
