@@ -26,10 +26,10 @@ class Location
     protected function loadNPC()
     {
         $arNpcIds = $this->locInfo['npc'];
+        
         if ($arNpcIds) {
-
             foreach ($arNpcIds as $id) {
-                $this->arNpc[] = $this->loadFile($this->fileNpc)[$id];
+                $this->arNpc[$id] = $this->loadFile($this->fileNpc)[$id];
             }
 
         }
