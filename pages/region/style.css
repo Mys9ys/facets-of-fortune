@@ -1,0 +1,8 @@
+.location_container .location_icon {
+  display: inline-block;
+  width: 50px;
+}
+.location_container .location_icon img {
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */
