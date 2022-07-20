@@ -20,7 +20,6 @@ class Rucksack
     protected $resources = [];
     protected $items = [];
 
-
     public function __construct()
     {
 
