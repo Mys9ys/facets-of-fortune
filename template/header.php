@@ -26,6 +26,7 @@
 
     <script src="<?$_SERVER['DOCUMENT_ROOT']?>/vendor/jquery-1.8.2.min.js"></script>
     <script src="<?$_SERVER['DOCUMENT_ROOT']?>/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
 <?include_once $_SERVER['DOCUMENT_ROOT'] . '/classes/internal_settings.php'?>
