@@ -4,6 +4,6 @@ $arr = [
 
 ];
 
-$fp = fopen('potion.json', 'w');
+$fp = fopen('quest_items.json', 'w');
 fwrite($fp, json_encode($arr));
 fclose($fp);
