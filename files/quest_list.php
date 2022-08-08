@@ -1,11 +1,6 @@
 <?php
 $arr = [
-    'active' => [
 
-    ],
-    'completed' => [
-
-    ]
 ];
 
 $fp = fopen('quest_list.json', 'w');

@@ -60,7 +60,7 @@ $hero = new Hero()?>
             <a class="header_btn" href="/pages/equip">
                 <img class="header_btn_img" src="/img/header/rucksack.png" alt="" title="Инвентарь">
             </a>
-            <a class="header_btn" href="/pages/quests">
+            <a class="header_btn" href="/pages/quest">
                 <img class="header_btn_img" src="/img/header/quest.png" alt="" title="Квесты">
             </a>
             <a class="header_btn" href="/pages/battle">

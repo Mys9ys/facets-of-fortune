@@ -1,11 +1,11 @@
 <?php
-$arr['1'] = [
+$arr['0'] = [
     'name' => 'Предписание Старейшины',
     'npc' => [
         ['name' => 'Старейшина Марвус Ошклейн', 'img' => '/img/npc/marvus.png'],
         ['name' => 'Мастер боевых искусств Тодеус Микаэль', 'img' => '/img/npc/todeus.png']
     ],
-    'dialogs' => [
+    'steps' => [
         [
             'npc' => 0,
             'questions' => ['Добрый день, путник! Что привело тебя в наш город?'],
@@ -54,12 +54,10 @@ $arr['1'] = [
         ['class'=> 'money', 'index'=>'cuprum', 'count'=>10]
 
     ],
-    'conditions' => [
-
-    ]
+    'conditions' => 'none'
 
 ];
 
-$fp = fopen('quests.json', 'w');
+$fp = fopen('quests_arr.json', 'w');
 fwrite($fp, json_encode($arr));
 fclose($fp);
