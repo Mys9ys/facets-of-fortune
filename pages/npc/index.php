@@ -14,7 +14,6 @@ $questRequest = new Quests($_REQUEST['id']);
 $quests = $questRequest->getQuestStatus();
 ?>
 
-
 <div class="container">
     <div class="npc_container">
         <div class="npc_info">
@@ -37,9 +36,8 @@ $quests = $questRequest->getQuestStatus();
                         </button>
                     </li>
                 <?php endforeach; ?>
-
-
             </ul>
+
             <div class="tab-content" id="questTabContent">
                 <?$num = 0?>
                 <?php foreach ($quests as $status => $quest): ?>
@@ -47,11 +45,10 @@ $quests = $questRequest->getQuestStatus();
                          role="tabpanel" aria-labelledby="<?= $status ?>-tab">
                         <h2><?= $quest['name'] ?></h2>
                         <?php foreach ($quest['items'] as $item):?>
-                        <a href="/pages/quest?npc=<?=$item['npc']?>&quest=<?=$item['id']?>"><?=$item['name']?></a>
+                        <a href="/pages/quest/?npc=<?=$item['npc']?>&quest=<?=$item['id']?>"><?=$item['name']?></a>
                         <?php endforeach;?>
                     </div>
                 <?php endforeach; ?>
-
             </div>
         </div>
     </div>

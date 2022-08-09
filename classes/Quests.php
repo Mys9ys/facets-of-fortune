@@ -59,7 +59,7 @@ class Quests
 
                 if ($item['conditions'] === 'none') {
 
-                    $this->questStatus['active']['items'][] = ['name' => $item['name'], 'id' => $id, 'npc' => $this->npc_id];
+                    $this->questStatus['new']['items'][] = ['name' => $item['name'], 'id' => $id, 'npc' => $this->npc_id];
 
                 }
 
